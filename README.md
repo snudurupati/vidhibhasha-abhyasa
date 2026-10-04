@@ -1,4 +1,6 @@
-# robotics-coding-reps
+# vidhibhasha-abhyasa
+
+*Vidhi-bhasha abhyasa* (विधिभाषा अभ्यास): procedural language practice, in Sanskrit.
 
 Daily coding practice. One hour a day, Mon to Sat, October to December 2026.
 
