@@ -15,15 +15,19 @@ duration returns the length of the time span the frames cover, in seconds. It is
 mean_frame_interval returns the average gap between neighbouring frames, in seconds. It is the duration divided by the number of gaps. If the episode has n frames, it has n minus 1 gaps.
 """
 
-class Episode:
-    def __init__(self, episode_id: str, robot: str, start_ts: float, frames: list[dict], actions: list[str]):
-        self.episode_id = episode_id
-        self.robot = robot
-        self.start_ts = start_ts
-        self.frames = frames
-        self.actions = actions
+# Using @Dataclass
+from dataclasses import dataclass
 
-    def frame_count(self) -> str:
+@dataclass
+class Episode:
+
+    episode_id: str
+    robot: str
+    start_ts: float
+    frames: list[dict]
+    actions: list[str]
+
+    def frame_count(self) -> int:
         return len(self.frames)
 
     def duration(self) -> float:
