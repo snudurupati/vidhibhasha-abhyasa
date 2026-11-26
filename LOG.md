@@ -6,6 +6,7 @@
 | 2026-11-18 | Reverse Words (Week 1 backfill) | ~25 min | Predicted the wrong output for `split(" ")`. It leaves empty strings, not spaces. Also did not know `[::-1]` allocates a second list of `k` pointers. |
 | 2026-11-18 | Valid Palindrome (Week 1 backfill) | ~75 min | Did not know `isalnum()`. `isalpha()` silently drops digits, so digits never got compared. Then a `result` flag made the failing case pass for the wrong reason and hid the bug. |
 | 2026-11-19 | Episode class (Week 1 backfill, Day 2) | ~90 min active | Called `sorted` O(n), it is O(n log n). Called the mean of gaps equal to the mean of the values, so a one-frame episode returned `0.0`. Never used a decorator or `@dataclass`, so the `@dataclass` conversion is still open. |
+| 2026-11-26 | Episode as `@dataclass` (Week 1 backfill, Day 2 close) | ~55 min | First time using a decorator. Deleted `__init__` before declaring fields, so `@dataclass` built a zero argument constructor. Diagnosed it from the `TypeError` once the cause was explained. Also lost and recovered `01_first_unique.py` from VSCode local history. |
 
 ## Review queue
 
@@ -19,9 +20,10 @@
 - Habit: the user skips asserts the coach marks "your call", so those paths ship untested. Coach must set the expected value, not defer it.
 - Day overran the 40 minute block both days. The O(1) two-pointer variant caused Day 1. The decorator detour caused Day 2. Coach keeps detours off the critical path.
 - The user does not like elementary analogies or Scala comparisons, and wants plain complete sentences with no fragment headings.
+- Lost work warning: uncommitted files are genuinely at risk. `01_first_unique.py` was deleted and recovered from VSCode local history at `~/Library/Application Support/Code/User/History`. Commit at the end of every session.
 
 ## Open for tomorrow
 
-- Convert `Episode` to `@dataclass` and delete the hand written `__init__`.
-- Then Day 3: iterators and generators, stream a large CSV in chunks.
+- Day 3: iterators and generators, stream a large CSV in chunks. File `week-01/05_generators.py`.
+- Day 2 is closed. `Episode` is a `@dataclass`, 11 asserts pass, and the hand written version is kept in `04_dataclasses_reference.py`.
 
